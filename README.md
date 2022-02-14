@@ -1,2 +1,63 @@
-# eslint-config
-EvercodeLab ESLint Config
+# EvercodeLab ESLint Config
+
+## Configurations
+
+We export four ESLint configurations for your usage:
+
+1. [Default](#default-config)
+2. [Fabric](#fabric-config)
+3. [React](#react-config)
+
+### Default Config
+
+In your `.eslintrc`:
+
+```json
+{
+  "root": true,
+  "extends": "@evercodelab/eslint-config"
+}
+```
+
+> **NOTE:** Make sure to [specify your environment](#specifying-environments) based on your project
+
+### Fabric Config
+
+Includes [`eslint-plugin-filenames`](https://github.com/selaux/eslint-plugin-filenames)
+
+
+```sh
+npx install-peerdeps --dev @evercodelab/eslint-config \
+  && npm install --save-dev eslint-plugin-filenames
+```
+
+
+In your `.eslintrc`:
+
+```json
+{
+  "root": true,
+  "extends": ["@evercodelab/eslint-config", "@evercodelab/eslint-config/fabric"]
+}
+```
+
+### React Config
+
+React-specific rules with
+
+- [`eslint-plugin-react`](https://github.com/yannickcr/eslint-plugin-react)
+- [`eslint-plugin-jsx-a11y`](https://github.com/evcohen/eslint-plugin-jsx-a11y)
+
+```sh
+npx install-peerdeps --dev @evercodelab/eslint-config \
+  && npm install --save-dev eslint-plugin-react eslint-plugin-jsx-a11y
+```
+
+**In your `.eslintrc`:**
+
+```json
+{
+  "root": true,
+  "extends": ["@evercodelab/eslint-config", "@evercodelab/eslint-config/react"]
+}
+```
