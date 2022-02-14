@@ -29,12 +29,11 @@ In your `.eslintrc`:
 
 ### Fabric Config
 
-Includes [`eslint-plugin-filenames`](https://github.com/selaux/eslint-plugin-filenames)
-
+Includes [`eslint-plugin-filename-rules`](https://github.com/dolsem/eslint-plugin-filename-rules)
 
 ```sh
 npx install-peerdeps --dev @evercodelab/eslint-config \
-  && npm install --save-dev eslint-plugin-filenames
+  && npm install --save-dev eslint-plugin-filename-rules
 ```
 
 

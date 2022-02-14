@@ -1,6 +1,6 @@
 module.exports = {
-  plugins: ['filenames'],
+  plugins: ['filename-rules'],
   rules: {
-    'filenames/match-exported': ['error', 'kebab'],
+    'filename-rules/match': ['error', 'kebabcase'],
   },
 }

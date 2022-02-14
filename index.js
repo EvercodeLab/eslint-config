@@ -1,5 +1,5 @@
 module.exports = {
-  plugins: ['@typescript-eslint'],
+  plugins: ['@typescript-eslint', 'import'],
   extends: [
     'airbnb-typescript',
     'eslint:recommended',
@@ -13,6 +13,13 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   parserOptions: {
     project: './tsconfig.json',
+  },
+  settings: {
+    "import/resolver": {
+      typescript: {
+        project: "./tsconfig.json",
+      }
+    }
   },
   rules: {
     // Basic
@@ -36,12 +43,6 @@ module.exports = {
     'prefer-template': 'error',
     'key-spacing': 'error',
     'eol-last': ['error', 'always'],
-    'padding-line-between-statements': [
-      'error',
-      { blankLine: 'always', prev: ['if'], next: ['*']},
-      { blankLine: 'always', prev: ['*'], next: ['if']},
-      { blankLine: 'always', prev: ['*'], next: ['return']},
-    ],
 
     // Imports
     'import/order': [
@@ -83,6 +84,6 @@ module.exports = {
       'error',
       { blankLine: 'always', prev: ['if', 'interface', 'type'], next: ['*']},
       { blankLine: 'always', prev: ['*'], next: ['if', 'return', 'interface', 'type']},
-    ]
+    ],
   },
 }
