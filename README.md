@@ -10,6 +10,12 @@ We export four ESLint configurations for your usage:
 
 ### Default Config
 
+Install package with peer dependencies:
+
+```sh
+npx install-peerdeps --dev @evercodelab/eslint-config
+```
+
 In your `.eslintrc`:
 
 ```json

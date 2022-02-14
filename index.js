@@ -16,7 +16,7 @@ module.exports = {
   },
   rules: {
     // Basic
-    curly: ["error", "multi-line"],
+    curly: ['error', 'multi-line'],
     eqeqeq: 'error',
     'no-eq-null': 'error',
     'no-nested-ternary': 'error',
@@ -77,12 +77,12 @@ module.exports = {
     '@typescript-eslint/consistent-type-assertions': ['error', { assertionStyle: 'angle-bracket' }],
     '@typescript-eslint/strict-boolean-expressions': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'error',
-    "@typescript-eslint/await-thenable": "error",
-    "@typescript-eslint/no-for-in-array": "error",
-    "@typescript-eslint/padding-line-between-statements": [
+    '@typescript-eslint/await-thenable': 'error',
+    '@typescript-eslint/no-for-in-array': 'error',
+    '@typescript-eslint/padding-line-between-statements': [
       'error',
-      { blankLine: 'always', prev: ['if', "interface", "type"], next: ['*']},
-      { blankLine: 'always', prev: ['*'], next: ['if', 'return', "interface", "type"]},
+      { blankLine: 'always', prev: ['if', 'interface', 'type'], next: ['*']},
+      { blankLine: 'always', prev: ['*'], next: ['if', 'return', 'interface', 'type']},
     ]
   },
 }
