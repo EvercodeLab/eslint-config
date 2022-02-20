@@ -4,7 +4,6 @@ module.exports = {
     'airbnb/hooks',
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
-    'plugin:jsx-a11y/recommended',
   ],
   parserOptions: {
     'sourceType': 'module',

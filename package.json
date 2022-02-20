@@ -1,7 +1,7 @@
 {
-  "name": "@evercodelab/eslint-config",
-  "version": "1.0.0",
-  "description": "EvercodeLab ESLint Config",
+  "name": "@evercode-lab/eslint-config",
+  "version": "0.1.0",
+  "description": "Evercode Lab ESLint Config",
   "main": "index.js",
   "peerDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.x.x",
@@ -10,11 +10,15 @@
     "eslint-config-airbnb": "^19.x.x",
     "eslint-config-airbnb-typescript": "^16.x.x",
     "eslint-plugin-import": "^2.x.x",
-    "eslint-import-resolver-typescript": "^2.x.x"
+    "eslint-import-resolver-typescript": "^2.x.x",
+    "eslint-plugin-unused-imports": "^2.x.x"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/EvercodeLab/eslint-config.git"
+  },
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com"
   },
   "keywords": [
     "eslint",
@@ -27,9 +31,9 @@
     "typescript"
   ],
   "author": {
-    "name" : "EvercodeLab",
-    "email" : "hello@evercodelab.com",
-    "url" : "https://evercodelab.com/"
+    "name": "EvercodeLab",
+    "email": "hello@evercodelab.com",
+    "url": "https://evercodelab.com/"
   },
   "license": "ISC",
   "bugs": {

@@ -1,9 +1,11 @@
 module.exports = {
-  plugins: ['@typescript-eslint', 'import'],
+  plugins: ['@typescript-eslint', 'import', 'unused-imports'],
   extends: [
+    'airbnb',
     'airbnb-typescript',
     'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
     'plugin:import/recommended',
     'plugin:import/typescript',
   ],
@@ -65,6 +67,8 @@ module.exports = {
       },
     ],
     'no-duplicate-imports': 'error',
+    'unused-imports/no-unused-imports': 'error',
+    'filename-rules/match': ['error', 'kebabcase'],
 
     // Typescript
     '@typescript-eslint/semi': ['error', 'never'],
@@ -80,6 +84,8 @@ module.exports = {
     '@typescript-eslint/explicit-module-boundary-types': 'error',
     '@typescript-eslint/await-thenable': 'error',
     '@typescript-eslint/no-for-in-array': 'error',
+    '@typescript-eslint/lines-between-class-members': ["error", "always", { "exceptAfterSingleLine": true }],
+    "@typescript-eslint/explicit-function-return-type": ["error"],
     '@typescript-eslint/padding-line-between-statements': [
       'error',
       { blankLine: 'always', prev: ['if', 'interface', 'type'], next: ['*']},
