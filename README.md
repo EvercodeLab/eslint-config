@@ -13,7 +13,7 @@ We export four ESLint configurations for your usage:
 Install package with peer dependencies:
 
 ```sh
-npx install-peerdeps --dev @evercode-lab/eslint-config
+npx install-peerdeps --dev @evercodelab/eslint-config
 ```
 
 In your `.eslintrc`:
@@ -21,7 +21,7 @@ In your `.eslintrc`:
 ```json
 {
   "root": true,
-  "extends": "@evercode-lab/eslint-config"
+  "extends": "@evercodelab/eslint-config"
 }
 ```
 
@@ -32,7 +32,7 @@ In your `.eslintrc`:
 Includes [`eslint-plugin-filename-rules`](https://github.com/dolsem/eslint-plugin-filename-rules)
 
 ```sh
-npx install-peerdeps --dev @evercode-lab/eslint-config \
+npx install-peerdeps --dev @evercodelab/eslint-config \
   && npm install --save-dev eslint-plugin-filename-rules
 ```
 
@@ -42,7 +42,7 @@ In your `.eslintrc`:
 ```json
 {
   "root": true,
-  "extends": ["@evercode-lab/eslint-config", "@evercode-lab/eslint-config/fabric"]
+  "extends": ["@evercodelab/eslint-config", "@evercodelab/eslint-config/fabric"]
 }
 ```
 
@@ -54,7 +54,7 @@ React-specific rules with
 - [`eslint-plugin-jsx-a11y`](https://github.com/evcohen/eslint-plugin-jsx-a11y)
 
 ```sh
-npx install-peerdeps --dev @evercode-lab/eslint-config \
+npx install-peerdeps --dev @evercodelab/eslint-config \
   && npm install --save-dev eslint-plugin-react eslint-plugin-jsx-a11y
 ```
 
@@ -63,6 +63,6 @@ npx install-peerdeps --dev @evercode-lab/eslint-config \
 ```json
 {
   "root": true,
-  "extends": ["@evercode-lab/eslint-config", "@evercode-lab/eslint-config/react"]
+  "extends": ["@evercodelab/eslint-config", "@evercodelab/eslint-config/react"]
 }
 ```

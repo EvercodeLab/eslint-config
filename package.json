@@ -1,5 +1,5 @@
 {
-  "name": "@evercode-lab/eslint-config",
+  "name": "@evercodelab/eslint-config",
   "version": "0.1.0",
   "description": "Evercode Lab ESLint Config",
   "main": "index.js",
