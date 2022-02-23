@@ -1,5 +1,5 @@
 {
-  "name": "@evercodelab/eslint-config",
+  "name": "@eclab/eslint-config",
   "version": "0.1.0",
   "description": "Evercode Lab ESLint Config",
   "main": "index.js",
@@ -17,9 +17,6 @@
     "type": "git",
     "url": "git+https://github.com/EvercodeLab/eslint-config.git"
   },
-  "publishConfig": {
-    "registry":"https://npm.pkg.github.com"
-  },
   "keywords": [
     "eslint",
     "evercodelab",
@@ -30,11 +27,7 @@
     "react",
     "typescript"
   ],
-  "author": {
-    "name": "EvercodeLab",
-    "email": "hello@evercodelab.com",
-    "url": "https://evercodelab.com/"
-  },
+  "author": "EvercodeLab <hello@evercodelab.com> (https://evercodelab.com/)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/EvercodeLab/eslint-config/issues"
