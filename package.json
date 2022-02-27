@@ -8,6 +8,7 @@
     "@typescript-eslint/parser": "^5.x.x",
     "eslint": "^7.x.x",
     "eslint-config-airbnb": "^19.x.x",
+    "eslint-plugin-filename-rules": "^1.x.x",
     "eslint-config-airbnb-typescript": "^16.x.x",
     "eslint-plugin-import": "^2.x.x",
     "eslint-import-resolver-typescript": "^2.x.x",
