@@ -5,8 +5,7 @@
 We export four ESLint configurations for your usage:
 
 1. [Default](#default-config)
-2. [Fabric](#fabric-config)
-3. [React](#react-config)
+2. [React](#react-config)
 
 ### Default Config
 
@@ -27,25 +26,6 @@ In your `.eslintrc`:
 
 > **NOTE:** Make sure to [specify your environment](#specifying-environments) based on your project
 
-### Fabric Config
-
-Includes [`eslint-plugin-filename-rules`](https://github.com/dolsem/eslint-plugin-filename-rules)
-
-```sh
-npx install-peerdeps --dev @eclab/eslint-config \
-  && npm install --save-dev eslint-plugin-filename-rules
-```
-
-
-In your `.eslintrc`:
-
-```json
-{
-  "root": true,
-  "extends": ["@eclab/eslint-config", "@eclab/eslint-config/fabric"]
-}
-```
-
 ### React Config
 
 React-specific rules with
@@ -55,7 +35,7 @@ React-specific rules with
 
 ```sh
 npx install-peerdeps --dev @eclab/eslint-config \
-  && npm install --save-dev eslint-plugin-react eslint-plugin-jsx-a11y
+  && npm install --save-dev eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-jsx-a11y
 ```
 
 **In your `.eslintrc`:**

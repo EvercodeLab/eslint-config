@@ -1,11 +1,11 @@
 module.exports = {
-  plugins: ['@typescript-eslint', 'import', 'unused-imports'],
+  plugins: ['@typescript-eslint', 'import', 'unused-imports', 'filename-rules'],
   extends: [
     'airbnb',
     'airbnb-typescript',
     'eslint:recommended',
-    "plugin:@typescript-eslint/recommended",
-    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    'plugin:@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'plugin:import/recommended',
     'plugin:import/typescript',
   ],
@@ -17,9 +17,9 @@ module.exports = {
     project: './tsconfig.json',
   },
   settings: {
-    "import/resolver": {
+    'import/resolver': {
       typescript: {
-        project: "./tsconfig.json",
+        project: './tsconfig.json',
       }
     }
   },
@@ -84,8 +84,8 @@ module.exports = {
     '@typescript-eslint/explicit-module-boundary-types': 'error',
     '@typescript-eslint/await-thenable': 'error',
     '@typescript-eslint/no-for-in-array': 'error',
-    '@typescript-eslint/lines-between-class-members': ["error", "always", { "exceptAfterSingleLine": true }],
-    "@typescript-eslint/explicit-function-return-type": ["error"],
+    '@typescript-eslint/lines-between-class-members': ['error', 'always', { 'exceptAfterSingleLine': true }],
+    '@typescript-eslint/explicit-function-return-type': ['error'],
     '@typescript-eslint/padding-line-between-statements': [
       'error',
       { blankLine: 'always', prev: ['if', 'interface', 'type'], next: ['*']},

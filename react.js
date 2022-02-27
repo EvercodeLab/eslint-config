@@ -18,6 +18,7 @@ module.exports = {
   },
   rules: {
     'react/prop-types': 'off',
-    'jsx-quotes': ["error", "prefer-single"],
+    'jsx-quotes': ['error', 'prefer-single'],
+    'react/function-component-definition': [2, { 'namedComponents': 'arrow-function' }],
   }
 }
