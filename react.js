@@ -1,6 +1,8 @@
 module.exports = {
   plugins: ['jsx-a11y'],
   extends: [
+    'airbnb',
+    'airbnb-typescript',
     'airbnb/hooks',
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
