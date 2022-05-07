@@ -53,9 +53,45 @@ npx install-peerdeps --dev @eclab/eslint-config \
   "extends": [
     "airbnb",
     "airbnb-typescript",
-    "@eclab/eslint-config",
+    "airbnb/hooks",
     "@eclab/eslint-config/react"
   ]
+}
+```
+
+## Add prettier
+
+Prettier is an opinionated code formatter.
+
+Install dependencies:
+
+```shell
+npm i -D prettier eslint-config-prettier eslint-plugin-prettier
+```
+
+Add `.prettierrc.js` in root:
+
+```js
+module.exports = require('@eclab/eslint-config/prettier')
+```
+
+To compare our prettier config with eslint config modify `.eslintrc`
+
+```json
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["prettier"],
+  "extends": [
+    "airbnb",
+    "airbnb-typescript",
+    "airbnb/hooks",
+    "@eclab/eslint-config/react",
+    "prettier"
+  ],
+  "rules": {
+    "prettier/prettier": "error"
+  }
 }
 ```
 
@@ -126,57 +162,48 @@ export default TestClass
 React:
 
 ```typescript jsx
-import React, { useState, useEffect } from 'react'
+import React, { FC, useEffect, useState } from 'react'
 
-import styled from '@emotion/styled'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
+import { getPopularCoins } from '@/clients/ChangeNowContentApiClient'
+import { BasicCurrencyInfoToShow } from '@/clients/ChangeNowContentApiClient/types'
+import Container from '@/components/ui/container'
+import capitalize from '@/utils/capitalize'
 
-interface Breadcrumb {
-  breadcrumb: string
-  href: string
-}
-
-const Breadcrumbs: React.FC = () => {
-  const router = useRouter()
-  const [breadcrumbs, setBreadcrumbs] = useState<Breadcrumb[]>([])
+const AssetsList: FC = () => {
+  const [coins, setCoins] = useState<BasicCurrencyInfoToShow[]>([])
 
   useEffect(() => {
-    if (router) {
-      const linkPath = router.asPath.split('/')
-      linkPath.shift()
+    getPopularCoins()
+      .then(setCoins)
+      .catch(() => setCoins([]))
+  }, [])
 
-      const pathArray = linkPath.map((path, i) => ({ breadcrumb: path, href: `/${linkPath.slice(0, i + 1).join('/')}` }))
-      setBreadcrumbs(pathArray)
-    }
-  }, [router])
-
-  if (!breadcrumbs) {
+  if (!coins.length) {
     return null
   }
 
   return (
-    <StyledBreadcrumb>
-      <StyledSpan>
-        <Link href='/' passHref>
-          <StyledLinkMain>Main</StyledLinkMain>
-        </Link>
-      </StyledSpan>
-      {breadcrumbs
-        && breadcrumbs.map((breadcrumb) => (
-          <span key={breadcrumb.href}>
-            <Link href={breadcrumb.href}>
-              <>
-                <StyledSpan> &gt; </StyledSpan>
-                <StyledLink>{Route2LabelMap[breadcrumb.breadcrumb]}</StyledLink>
-              </>
-            </Link>
-          </span>
+    <Container element='section' className='flex items-center justify-between my-12'>
+      <div className='flex mb-8 items-center overflow-x-scroll h-28'>
+        {coins.map((coin) => (
+          <div
+            key={coin.icon}
+            className='flex px-5 py-2 items-center min-w-[17rem] max-w-[17rem] rounded-2xl shadow-md ml-4'
+          >
+            <img width='35' height='35' className='max-w-screen-sm mr-3' src={coin.icon} alt={coin.name} />
+
+            <div>
+              <p className='mb-1'>{coin.ticker.toUpperCase()}</p>
+              <p className='mb-1'>{capitalize(coin.name)}</p>
+              <p className='mb-1'>$ {coin.price}</p>
+            </div>
+          </div>
         ))}
-    </StyledBreadcrumb>
+      </div>
+    </Container>
   )
 }
 
-export default Breadcrumbs
+export default AssetsList
 
 ```
