@@ -3,14 +3,12 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
-    'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'plugin:import/recommended',
     'plugin:import/typescript',
   ],
   env: {
     es6: true,
   },
-  parser: '@typescript-eslint/parser',
   parserOptions: {
     project: './tsconfig.json',
   },
@@ -67,6 +65,7 @@ module.exports = {
     'no-duplicate-imports': 'error',
     'unused-imports/no-unused-imports': 'error',
     'filename-rules/match': ['error', 'kebabcase'],
+    'import/prefer-default-export': 1,
 
     // Typescript
     '@typescript-eslint/semi': ['error', 'never'],
