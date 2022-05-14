@@ -23,5 +23,6 @@ module.exports = {
     'react/jsx-uses-react': 2,
     'react/jsx-uses-vars': 2,
     'react/require-default-props': 0,
+    'react/jsx-props-no-spreading': 1,
   }
 }

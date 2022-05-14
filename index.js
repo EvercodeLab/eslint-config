@@ -78,11 +78,11 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'error',
     '@typescript-eslint/consistent-type-assertions': ['error', { assertionStyle: 'angle-bracket' }],
     '@typescript-eslint/strict-boolean-expressions': 'off',
-    '@typescript-eslint/explicit-module-boundary-types': 'error',
+    '@typescript-eslint/explicit-module-boundary-types': 1,
     '@typescript-eslint/await-thenable': 'error',
     '@typescript-eslint/no-for-in-array': 'error',
     '@typescript-eslint/lines-between-class-members': ['error', 'always', { 'exceptAfterSingleLine': true }],
-    '@typescript-eslint/explicit-function-return-type': ['error'],
+    '@typescript-eslint/explicit-function-return-type': 1,
     '@typescript-eslint/padding-line-between-statements': [
       'error',
       { blankLine: 'always', prev: ['if', 'interface', 'type'], next: ['*']},
