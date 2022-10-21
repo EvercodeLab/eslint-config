@@ -17,12 +17,15 @@ module.exports = {
     'es6': true,
   },
   rules: {
+    // Since React 17 and typescript 4.1 you can safely disable the rule
+    'react/react-in-jsx-scope': 'off',
     'react/prop-types': 'off',
     'jsx-quotes': ['error', 'prefer-single'],
     'react/function-component-definition': [2, { 'namedComponents': 'arrow-function' }],
     'react/jsx-uses-react': 2,
     'react/jsx-uses-vars': 2,
     'react/require-default-props': 0,
-    'react/jsx-props-no-spreading': 1,
+    'react/no-unused-prop-types': 'off',
+    'react/jsx-props-no-spreading': 'off',
   }
 }

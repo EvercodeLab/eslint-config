@@ -1,5 +1,5 @@
 module.exports = {
-  plugins: ['@typescript-eslint', 'import', 'unused-imports', 'filename-rules'],
+  plugins: ['@typescript-eslint', 'import', 'unused-imports'],
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
@@ -31,7 +31,22 @@ module.exports = {
     'no-param-reassign': 'warn',
 
     // Style
-    'max-len': ['error', { code: 120, ignoreTemplateLiterals: true, ignoreUrls: true, ignoreStrings: true }],
+    'max-len': [
+      'error',
+      {
+        // hard limit for line length. preferred line length is controlled by
+        // prettier. this is only for cases when prettier cannot reformat
+        // code to preferred length
+        code: 160,
+        // prettier does not control line length in comments, so enforce it
+        // with eslint
+        comments: 100,
+        // urls in comments cannot be wrapped, so we need to ignore them
+        ignoreUrls: true,
+        ignoreTemplateLiterals: true,
+        ignoreStrings: true
+      }
+    ],
     'arrow-body-style': ['error', 'as-needed'],
     'arrow-parens': 'error',
     'arrow-spacing': 'error',
@@ -64,8 +79,7 @@ module.exports = {
     ],
     'no-duplicate-imports': 'error',
     'unused-imports/no-unused-imports': 'error',
-    'filename-rules/match': ['error', 'kebabcase'],
-    'import/prefer-default-export': 1,
+    'import/prefer-default-export': 'off',
 
     // Typescript
     '@typescript-eslint/semi': ['error', 'never'],
@@ -76,7 +90,7 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': 'error',
     '@typescript-eslint/array-type': 'error',
     '@typescript-eslint/no-explicit-any': 'error',
-    '@typescript-eslint/consistent-type-assertions': ['error', { assertionStyle: 'angle-bracket' }],
+    '@typescript-eslint/consistent-type-assertions': 'off',
     '@typescript-eslint/strict-boolean-expressions': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 1,
     '@typescript-eslint/await-thenable': 'error',
@@ -87,6 +101,24 @@ module.exports = {
       'error',
       { blankLine: 'always', prev: ['if', 'interface', 'type'], next: ['*']},
       { blankLine: 'always', prev: ['*'], next: ['if', 'return', 'interface', 'type']},
+    ],
+    'import/no-unresolved': 'error',
+    'class-methods-use-this': 'off',
+    '@typescript-eslint/ban-ts-comment': 'warn',
+    // warn on unused promises (not await'ed or then'ed).
+    // helps to not forget to call await on async function calls with no expected result.
+    // add 'void' to explicitly ignore promise in certain cases
+    '@typescript-eslint/no-floating-promises': ['warn', { ignoreVoid: true }],
+    'no-void': ['warn', { allowAsStatement: true }],
+    'consistent-return': 'warn',
+
+    // override airbnb config to allow for-of/for-in loops.
+    // those loops were banned because of "slow performance", which is debatable decision.
+    // https://github.com/airbnb/javascript/issues/1271
+    'no-restricted-syntax': [
+      'error',
+      'LabeledStatement',
+      'WithStatement'
     ],
   },
 }
